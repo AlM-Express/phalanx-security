@@ -19,7 +19,7 @@ It currently supports:
 
 Node.js supply-chain attacks often hide inside packages that look normal at first glance. Malicious packages may use install scripts, run shell commands, reach out to remote servers, or modify local files during installation.
 
-Phalanx helps detect and reduce that risk by adding security checks around the install process instead of trusting packages blindly.
+Phalanx helps detect and reduce that risk by adding security checks around the installation process instead of blindly trusting packages.
 
 ## Features
 
@@ -39,7 +39,7 @@ Phalanx scans dependency files and package manifests for suspicious indicators s
 Lifecycle scripts are executed through Phalanx’s own control layer so suspicious activity can be observed and scored.
 
 ### Trust lock and verification
-Phalanx can record a baseline of the installed dependency tree and later verify whether files changed.
+Phalanx can record a baseline of the installed dependency tree and later verify whether files have changed.
 
 ### Reporting
 Results can be shown in a readable terminal report and also exported as JSON for tooling and automation.
@@ -50,7 +50,7 @@ Build from source:
 
 ```bash
 # clone the repository
-git clone https://github.com/your-org/phalanx-security.git
+git clone https://github.com/AlM-Express/phalanx-security.git
 cd phalanx-security
 
 # build the CLI
