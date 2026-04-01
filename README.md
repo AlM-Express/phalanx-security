@@ -157,10 +157,6 @@ Suggested flow:
 4. Run tests and formatting
 5. Open a pull request
 
-## License
-
-Add your license here.
-
 ## Acknowledgments
 
 Built to help developers reduce Node.js supply-chain risk and make dependency installs safer by default.
