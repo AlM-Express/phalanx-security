@@ -1,0 +1,44 @@
+name: Phalanx CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    name: Build & Test Engine
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
+
+    - name: Install dependencies
+      run: go mod download
+
+    - name: Run Malware Fixture Tests
+      run: go test -v ./...
+
+  release:
+    name: Build Binaries
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.20'
+    - name: Compile
+      run: make build
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: phalanx-binaries
+        path: build/
