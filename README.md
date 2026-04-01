@@ -135,28 +135,6 @@ It currently focuses on:
 
 For production environments that need stronger containment, Phalanx can be paired with OS-level sandboxing, container isolation, or CI policy enforcement.
 
-## Roadmap
-
-Possible next steps include:
-
-- Deeper syscall and network telemetry
-- Stronger sandbox isolation for lifecycle scripts
-- Signature-based trust policies
-- Repository-level policy files
-- More package ecosystem coverage
-
-## Contributing
-
-Contributions are welcome.
-
-Suggested flow:
-
-1. Fork the repository
-2. Create a branch
-3. Make your changes
-4. Run tests and formatting
-5. Open a pull request
-
 ## Acknowledgments
 
 Built to help developers reduce Node.js supply-chain risk and make dependency installs safer by default.
